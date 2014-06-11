@@ -2,7 +2,7 @@ datasciencecoursera
 ===================
 
 ## Introduction
-This repo is for the projects in Data Science Specialization @ Coursera offered by Johns Hopkins University.
+This repo is for the projects in Data Science Specialization @ Coursera, offered by Johns Hopkins University.
 https://www.coursera.org/specialization/jhudatascience/1
 
 ## Courses
