@@ -5,6 +5,9 @@ datasciencecoursera
 This repo is for the projects in Data Science Specialization @ Coursera, offered by Johns Hopkins University.
 https://www.coursera.org/specialization/jhudatascience/1
 
+### License
+This repo is licensed under GPLv3.
+
 ## Courses
 I plan to take all the 9 courses:
 * The Data Scienctist's Toolbox (June 2014)
@@ -19,5 +22,3 @@ I plan to take all the 9 courses:
 
 I will summarize my progress in this README.md.
 
-### License
-This repo is licensed under GPLv3.
