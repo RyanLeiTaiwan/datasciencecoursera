@@ -10,6 +10,7 @@ This repo is licensed under GPLv3.
 
 ## Courses
 I plan to take all the 9 courses:
+
 1. The Data Scienctist's Toolbox (June 2014)
 2. R Programming (June 2014)
 3. Getting and Cleaning Data (June 2014)
