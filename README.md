@@ -17,4 +17,7 @@ I plan to take all the 9 courses:
 * Practical Machine Learning
 * Developing Data Products
 
-I will summarize my progress in this README.md
+I will summarize my progress in this README.md.
+
+### License
+This repo is licensed under GPLv3.
