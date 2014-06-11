@@ -10,15 +10,15 @@ This repo is licensed under GPLv3.
 
 ## Courses
 I plan to take all the 9 courses:
-* The Data Scienctist's Toolbox (June 2014)
-* R Programming (June 2014)
-* Getting and Cleaning Data (June 2014)
-* Exploratory Data Analysis
-* Reproducible Research
-* Statistical Inference
-* Regression Models
-* Practical Machine Learning
-* Developing Data Products
+1. The Data Scienctist's Toolbox (June 2014)
+2. R Programming (June 2014)
+3. Getting and Cleaning Data (June 2014)
+4. Exploratory Data Analysis
+5. Reproducible Research
+6. Statistical Inference
+7. Regression Models
+8. Practical Machine Learning
+9. Developing Data Products
 
 I will summarize my progress in this README.md.
 
