@@ -65,32 +65,31 @@ The Outcome of Care Measures.csv table contains forty seven (47) fields. This ta
   * Worse than U.S. National Average
   * Number of Cases too Small
 ----
-31. ????????
-32. Lower Readmission Estimate - Hospital 30-Day Readmission Rates from Heart Attack: Lists the lower bound (Interval Estimate) for each hospital’s risk-adjusted rate.
-33. Upper Readmission Estimate - Hospital 30-Day Readmission Rates from Heart Attack: Lists the upper bound (Interval Estimate) for each hospital’s risk-adjusted rate.
-34. Number of Patients - Hospital 30-Day Readmission Rates from Heart Attack: varchar
+31. Lower Readmission Estimate - Hospital 30-Day Readmission Rates from Heart Attack: Lists the lower bound (Interval Estimate) for each hospital’s risk-adjusted rate.
+32. Upper Readmission Estimate - Hospital 30-Day Readmission Rates from Heart Attack: Lists the upper bound (Interval Estimate) for each hospital’s risk-adjusted rate.
+33. Number of Patients - Hospital 30-Day Readmission Rates from Heart Attack: varchar
 (5) Lists the number of Medicare patients treated for Heart Attack.
-35. Footnote - Hospital 30-Day Readmission Rates from Heart Attack: Lists the footnote value when appropriate, as related to the Heart Attack Outcome of Care at the hospital.
-36. Hospital 30-Day Readmission Rates from Heart Failure: Lists the risk adjusted rate (percentage) for each hospital.
-37. Comparison to U.S. Rate - Hospital 30-Day Readmission Rates from Heart Failure: varchar (50) Lists the mortality and readmission category in which the hospital falls. The values are:
+34. Footnote - Hospital 30-Day Readmission Rates from Heart Attack: Lists the footnote value when appropriate, as related to the Heart Attack Outcome of Care at the hospital.
+35. Hospital 30-Day Readmission Rates from Heart Failure: Lists the risk adjusted rate (percentage) for each hospital.
+36. Comparison to U.S. Rate - Hospital 30-Day Readmission Rates from Heart Failure: varchar (50) Lists the mortality and readmission category in which the hospital falls. The values are:
   * Better than U.S. National Average
   * No Different than U.S. National Average
   * Worse than U.S. National Average
   * Number of Cases too Small
-38. Lower Readmission Estimate - Hospital 30-Day Readmission Rates from Heart Failure: Lists the lower bound (Interval Estimate) for each hospital’s risk-adjusted rate.
-39. Upper Readmission Estimate - Hospital 30-Day Readmission Rates from Heart Failure: Lists the upper bound (Interval Estimate) for each hospital’s risk-adjusted rate.
-40. Number of Patients - Hospital 30-Day Readmission Rates from Heart Failure: varchar
+37. Lower Readmission Estimate - Hospital 30-Day Readmission Rates from Heart Failure: Lists the lower bound (Interval Estimate) for each hospital’s risk-adjusted rate.
+38. Upper Readmission Estimate - Hospital 30-Day Readmission Rates from Heart Failure: Lists the upper bound (Interval Estimate) for each hospital’s risk-adjusted rate.
+39. Number of Patients - Hospital 30-Day Readmission Rates from Heart Failure: varchar
 (5) Lists the number of Medicare patients treated for Heart Failure.
+40. Footnote - Hospital 30-Day Readmission Rates from Heart Failure: Lists the footnote value when appropriate, as related to the Heart Failure Outcome of Care at the hospital.
 ----
-41. Footnote - Hospital 30-Day Readmission Rates from Heart Failure: Lists the footnote value when appropriate, as related to the Heart Failure Outcome of Care at the hospital.
-42. Hospital 30-Day Readmission Rates from Pneumonia: Lists the risk adjusted rate (percentage) for each hospital.
-43. Comparison to U.S. Rate - Hospital 30-Day Readmission Rates from Pneumonia: varchar (50) Lists the mortality and readmission category in which the hospital falls. The values are:
+41. Hospital 30-Day Readmission Rates from Pneumonia: Lists the risk adjusted rate (percentage) for each hospital.
+42. Comparison to U.S. Rate - Hospital 30-Day Readmission Rates from Pneumonia: varchar (50) Lists the mortality and readmission category in which the hospital falls. The values are:
   * Better than U.S. National Average
   * No Different than U.S. National Average
   * Worse than U.S. National Average
   * Number of Cases too Small
-44. Lower Readmission Estimate - Hospital 30-Day Readmission Rates from Pneumonia: Lists the lower bound (Interval Estimate) for each hospital’s risk-adjusted rate.
-45. Upper Readmission Estimate - Hospital 30-Day Readmission Rates from Pneumonia: Lists the upper bound (Interval Estimate) for each hospital’s risk-adjusted rate.
-46. Number of Patients - Hospital 30-Day Readmission Rates from Pneumonia: varchar
+43. Lower Readmission Estimate - Hospital 30-Day Readmission Rates from Pneumonia: Lists the lower bound (Interval Estimate) for each hospital’s risk-adjusted rate.
+44. Upper Readmission Estimate - Hospital 30-Day Readmission Rates from Pneumonia: Lists the upper bound (Interval Estimate) for each hospital’s risk-adjusted rate.
+45. Number of Patients - Hospital 30-Day Readmission Rates from Pneumonia: varchar
 (5) Lists the number of Medicare patients treated for Pneumonia.
-47. Footnote - Hospital 30-Day Readmission Rates from Pneumonia: Lists the footnote value when appropriate, as related to the Pneumonia Outcome of Care at the hospital.
+46. Footnote - Hospital 30-Day Readmission Rates from Pneumonia: Lists the footnote value when appropriate, as related to the Pneumonia Outcome of Care at the hospital.
