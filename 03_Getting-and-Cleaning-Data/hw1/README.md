@@ -24,7 +24,7 @@ My tidy dataset contains 180 rows and 68 columns as explained by:
 * 6 activities * 30 subjects = 180 rows.
   * We are asked to compute the means for all the remaining variables grouped by all {activity, subject} combinations.
 * 66 mean-and-std-related variables + 1 activity + 1 subject = 68 columns.
-  * NOTE: Be careful with regular expressions! There are 13 column names with "meanFreq()" that SHOULD NOT be included. So in tidy, there should only be 66 instead of 81 columns!!
+  * NOTE: Be careful with regular expressions! There are 13 column names with "meanFreq()" that SHOULD NOT be included. So in tidy, there should only be 68 instead of 81 columns!!
 
 You can use read.table("tidy.txt", header = TRUE) to read the data and compare with the correct answers.
 
