@@ -3,18 +3,29 @@ This CodeBook.md describes all the variables in the tidy dataset (tidy.txt) gene
 The original dataset (UCI HAR Dataset) can be downloaded [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
 
 ## How the tidy dataset is obtained
-Originally, there are 561 variables in the dataset (both X_train and X_test). The course instructions require us to "extracts only the measurements on the **mean** and **standard deviation** for each measurement". So by the regular expression **"-mean[(][)]|-std[(][])]"** used with grep() in R, the program extracts 66 variables.
+Originally, there are 561 variables in the dataset (both X_train and X_test). The course instructions require us to "extracts only the measurements on the **mean** and **standard deviation** for each measurement". So by the regular expression *"-mean[(][)]|-std[(][])]"* used with *grep()* in R, the program extracts 66 variables.
 
-Finally, the instructions say "Creates a second, independent tidy data set with the average of each variable for each activity and each subject". So the program GROUPS the rows BY all the 6 activities x 30 subjects = 180 combinations (180 rows). Then for each group, transform all the remaining measurement variables into the average (mean) values within that group using aggregate().
+Finally, the instructions say "Creates a second, independent tidy data set with the average of each variable for each activity and each subject". So the program GROUPS the rows BY all the 6 activities x 30 subjects = 180 combinations (180 rows). Then for each group, transform all the remaining measurement variables into the average (mean) values within that group using *aggregate()*.
 
 Therefore, in the tidy dataset, the first 2 variables are *activity* and *subject*, followed by the 66 *measurement variables in average values* for each of the {activity, subject} combinations.
 
 ## Description of the 68 variables
 ### Grouped variables (2)
-1. **activity: **
-2. **subject: **
+1. **activity**: the human activity performed by the subject in the experiment. It is a factor with values in {WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING}.
+2. **subject**: the identity of the subject (ID for the person participating in the experiment). It is a factor with values in {1, 2, ..., 30}, which means there are 30 subjects in the experiment.
 
 ### Measurement variables in average values (66)
+The naming follows a certain pattern so we can break down the variable names into several parts in the following order:
+* {t, f}: time or frequency domain.
+* {Body, Gravity}: body acceleration signals or gravity acceleration signals.
+* {Acc, Gyro}: signal measurement by accelerometer or gyroscope.
+* [optional] {Jerk}: the derived Jerk signals.
+* [optional] {Mag}: magnitude of the signals using Euclidean norm.
+* {-mean(), -std()}: summary by mean or standard deviation.
+* [optional] {-X, -Y, -Z}: signal component in X, Y, or Z axis within a 3-dimensional space.
+
+These 66 real-valued variables are listed below. Remember, they are all in average values for each of the {activity, subject} combinations.
+
 1. **tBodyAcc-mean()-X**
 2. **tBodyAcc-mean()-Y**
 3. **tBodyAcc-mean()-Z**
