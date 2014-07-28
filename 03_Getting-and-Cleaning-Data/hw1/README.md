@@ -12,7 +12,7 @@ In my implementation, there is only one R script named run_analysis.R. I have re
 run_analysis() takes no input parameters, and will return a data frame as the required tiny dataset.
 
 ## How to run the program
-* Put the run_analysis.R and the dataset zip file (getdata-projectfiles-UCI HAR Dataset.zip) in your working directory.
+* Put the run_analysis.R and the dataset zip file (downloaded [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)) in your working directory.
 * Extract the zip file in your working directory. There should be a directory "UCI HAR Dataset" containing directories "train" and "test", and files "activity_labels.txt", "features_info.txt", "features.txt", "README.txt".
 * Load the R script with source() command.
 * In your working directory, run: tidy <- run_analysis().
