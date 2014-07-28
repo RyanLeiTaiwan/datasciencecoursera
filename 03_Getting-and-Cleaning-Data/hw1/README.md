@@ -15,7 +15,7 @@ run_analysis() takes no input parameters, and will return a data frame as the re
 * Put the run_analysis.R and the dataset zip file (downloaded [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)) in your working directory.
 * Extract the zip file in your working directory. There should be a directory "UCI HAR Dataset" containing directories "train" and "test", and files "activity_labels.txt", "features_info.txt", "features.txt", "README.txt".
 * Load the R script with source() command.
-* In your working directory, run: tidy <- run_analysis().
+* In your working directory, run: **tidy <- run_analysis()**.
 
 The program will read the necessary files in "UCI HAR Dataset", perform the cleaning, and export the tidy dataset to the file "tidy.txt". It will also return the same dataset as the data frame object "tidy".
 
