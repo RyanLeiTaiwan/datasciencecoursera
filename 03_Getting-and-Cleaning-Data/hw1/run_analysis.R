@@ -79,7 +79,7 @@ run_analysis <- function() {
     ## 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
     message("| 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.")
     ### NOTE: In tidy, there should be 6 activities * 30 subjects = 180 rows!
-    tidy <- aggregate(. ~ activity + subject, data = extracted, mean)
+    tidy <- aggregate(. ~ activity + subject, data = extracted, FUN = mean)
     message("|-- Also exporting the object to \"tidy.txt\" without the row names...")
     write.table(tidy, "tidy.txt", row.names = FALSE)
     message("** done")
