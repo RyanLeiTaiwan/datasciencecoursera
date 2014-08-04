@@ -26,6 +26,6 @@ My tidy dataset contains 180 rows and 68 columns as explained by:
 * 66 mean-and-std-related variables + 1 activity + 1 subject = 68 columns.
   * NOTE: Be careful with regular expressions! There are 13 column names with "meanFreq()" that SHOULD NOT be included. So in tidy, there should only be 68 instead of 81 columns!!
 
-You can use read.table("tidy.txt", header = TRUE) to read the data and compare with the correct answers.
+You can use compare the **tidy** object with what you believe is the correct answer. You can also use read.table("tidy.txt", header = TRUE) to read the exported data.
 
 However, you may only compare numeric and factor values. The variable names and factor levels behave differently when they are read back.
