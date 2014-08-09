@@ -13,9 +13,9 @@ This repo is licensed under GPLv3.
 ## Courses
 I plan to take all the 9 courses:
 
-1. **The Data Scientist's Toolbox** (June 2014, scored 100%)
-2. **R Programming** (June 2014, scored 100%)
-3. **Getting and Cleaning Data** (July 2014, scored 100%)
+1. **The Data Scientist's Toolbox** (June 2014, scored **100%**)
+2. **R Programming** (June 2014, scored **100%**)
+3. **Getting and Cleaning Data** (July 2014, scored **100%**)
 4. **Exploratory Data Analysis** (August 2014)
 5. Reproducible Research (September 2014)
 6. Statistical Inference
