@@ -1,6 +1,27 @@
 # About
 This is the repository for Programming Assignment 1 of [**Exploratory Data Analysis**](https://www.coursera.org/course/exdata) by Coursera student [RyanLeiTaiwan](https://www.coursera.org/user/i/f5a617a5122f65d7569968c21d0943e6).
 
+# How to run the program
+* Put the R scripts and the extracted dataset file `household_power_consumption.txt` in your working directory.
+* Load the R scripts with `source()` commands.
+* Install `sqldf` package if necessary
+* To run the 4 scripts together, run: `run_all()`
+* To run the 4 scripts one by one, run: `plot1(); plot2(); plot3(); plot4()`
+
+I have noticed several ways of reading and subsetting the data from the course forum in July, 2014. I have tried to implement all of them. Unfortunately, the `fread()` with `{data.table}` method failed because `data.table` does not support `POSIXlt`, so I had problems calling `strptime()` on a data table!
+
+# My Plots
+### Plot 1
+![Plot 1](/04_Exploratory-Data-Analysis/hw1/plot1.png) 
+### Plot 2
+![Plot 2](/04_Exploratory-Data-Analysis/hw1/plot2.png) 
+### Plot 3
+![Plot 3](/04_Exploratory-Data-Analysis/hw1/plot3.png) 
+### Plot 4
+![Plot 4](/04_Exploratory-Data-Analysis/hw1/plot4.png) 
+
+----
+
 ## Introduction
 
 This assignment uses data from
