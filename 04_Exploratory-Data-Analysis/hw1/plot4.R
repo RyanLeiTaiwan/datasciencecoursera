@@ -8,7 +8,7 @@
 plot4 <- function() {
     message("====  Plot 4  ====")
     # You may need to set the locale if your system language is not English
-    #Sys.setlocale("LC_TIME", "Ensligh")  # for Windows
+    #Sys.setlocale("LC_TIME", "English")  # for Windows
     #Sys.setlocale("LC_TIME", "en_US.UTF-8")  # for Mac and Linux    
     
     # [1] Read and subset the data by calling an external script
