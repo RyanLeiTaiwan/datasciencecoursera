@@ -1,7 +1,7 @@
 ## File: plot3.R
 ## Input: NONE
 ## Output: NONE, but Plot 3 is shown on screen and exported to PNG.
-## Description: 
+## Description:
 ##   Read and subset the data, construct Plot 3, and export it to a PNG file.
 ## Plot 3: Energy Sub Meterings 1 ~ 3 vs. Time
 
@@ -9,20 +9,20 @@ plot3 <- function() {
     message("====  Plot 3  ====")
     # You may need to set the locale if your system language is not English
     #Sys.setlocale("LC_TIME", "English")  # for Windows
-    #Sys.setlocale("LC_TIME", "en_US.UTF-8")  # for Mac and Linux    
-    
+    #Sys.setlocale("LC_TIME", "en_US.UTF-8")  # for Mac and Linux
+
     # [1] Read and subset the data by calling an external script
     source("read_data.R")
     message("| Reading and subsetting data...")
     print(system.time(dat <- read_data()))
     message("** done")
-    
+
     # [2] Construct Plot 3 (time series *3)
     message("| Constructing the plot and exporting it to PNG...")
     # This will be shown on the computer screen
     graphics.off()
     plot3_commands(dat)
-    
+
     # [3] Export the plot to a PNG file.
     ### NOTE: DO NOT use dev.copy(). It may not produce the same plot as shown on the screen.
     png("plot3.png")
