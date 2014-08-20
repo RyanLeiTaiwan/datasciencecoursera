@@ -13,7 +13,7 @@ I have noticed several ways of reading and subsetting the data from the course f
 * **FREAD**: Use `fread()` in `{data.table}` package
 * **PIPE**: pipe + UNIX grep (This will FAIL on Windows!!)
 * **SQLDF**: Use `read.csv.sql()` in `{sqldf}` package
-* **NORMAL**: normal read.table (as reference)
+* **NORMAL**: (As reference) Use the normal `read.table()`
 
 You need to specify the reading method in `read_data.R` as:
 `method = factor("XXXX", levels = c("CHEAT", "FREAD", "PIPE", "SQLDF", "NORMAL"))`, where `XXXX` is one of the methods
