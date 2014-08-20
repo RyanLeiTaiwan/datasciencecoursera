@@ -9,11 +9,11 @@ This is the repository for Programming Assignment 1 of [**Exploratory Data Analy
 * To run the 4 scripts one by one, run: `plot1(); plot2(); plot3(); plot4()`
 
 I have noticed several ways of reading and subsetting the data from the course forum in July, 2014. I have tried to implement all of them:
-* CHEAT: Count the EXACT number of rows to skip and to read
-* FREAD: Use `fread()` in `{data.table}` package
-* PIPE: pipe + UNIX grep (This will FAIL on Windows!!)
-* SQLDF: Use `read.csv.sql()` in `{sqldf}` package
-* NORMAL: normal read.table (as reference)
+* **CHEAT**: Count the EXACT number of rows to skip and to read
+* **FREAD**: Use `fread()` in `{data.table}` package
+* **PIPE**: pipe + UNIX grep (This will FAIL on Windows!!)
+* **SQLDF**: Use `read.csv.sql()` in `{sqldf}` package
+* **NORMAL**: normal read.table (as reference)
 
 You need to specify the reading method in `read_data.R` as:
 `method = factor("XXXX", levels = c("CHEAT", "FREAD", "PIPE", "SQLDF", "NORMAL"))`, where `XXXX` is one of the methods
