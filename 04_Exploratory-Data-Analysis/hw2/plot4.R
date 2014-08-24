@@ -19,7 +19,7 @@ SCC.required <- SCC$SCC[grep("[Cc]omb", grep("[Cc]oal", SCC$EI.Sector, value = T
 # [3] Calculate the PM2.5 emissions from coal combustion-related sources in the U.S. for each year
 result <- summarize(group_by(filter(NEI, SCC %in% SCC.required), year), PM25 = sum(Emissions))
 
-# [4] Produce the bar plots
+# [4] Produce the bar plot
 png("plot4.png", 600, 600)
 par(oma = c(1,1,0,0), mar = c(4,4,2,1))
 options(scipen = 100)  # Remove scientific notation

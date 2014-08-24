@@ -20,7 +20,7 @@ SCC.required <- SCC$SCC[grep("[Vv]ehicle", grep("[Mm]otor", SCC$Short.Name, valu
 # [3] Calculate the PM2.5 emissions from motor vehicles in Baltimore for each year
 result <- summarize(group_by(filter(NEI, fips == BALTIMORE_CODE, SCC %in% SCC.required), year), PM25 = sum(Emissions))
 
-# [4] Produce the bar plots
+# [4] Produce the bar plot
 png("plot5.png", 600, 600)
 par(oma = c(1,1,0,0), mar = c(4,4,2,1))
 barplot(result$PM25, names.arg = result$year, xlab = "Year", ylab = expression(PM[2.5] * " Emissions from Motor Vehicles in Baltimore"), main = "Question 5", ylim = c(0, max(result["PM25"]) * 1.1))
