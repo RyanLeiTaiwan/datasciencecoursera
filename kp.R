@@ -22,10 +22,11 @@ for (id in catID) {
 }
 
 # [3] Replace $plain_content by the article's length using nchar()
-articles$nchar <- nchar(articles$plain_content)
+# Count for bytes instead of chars to work around Chinese problems on "Windows"!!
+articles$nchar <- nchar(articles$plain_content, type = "bytes")
 articles$plain_content <- NULL
 # Average article length by category
-with(articles, tapply(nchar, category_name, mean))
+with(articles, tapply(nchar, category_id, mean))
 
 # [4] Convert $post_date to Time (POSIXlt) format
 articles$post_date <- strptime(articles$post_date, "%Y-%m-%dT%H:%M:%S.000Z")
