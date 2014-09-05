@@ -25,6 +25,8 @@ for (id in catID) {
 # Count for bytes instead of chars to work around Chinese problems on "Windows"!!
 articles$nchar <- nchar(articles$plain_content, type = "bytes")
 articles$plain_content <- NULL
+# Number of articles by category
+with(articles, tapply(nchar, category_id, length))
 # Average article length by category
 with(articles, tapply(nchar, category_id, mean))
 
