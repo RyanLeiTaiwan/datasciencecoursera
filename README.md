@@ -17,8 +17,8 @@ I plan to take all the 9 courses:
 2. **R Programming** (June 2014, scored **100%**)
 3. **Getting and Cleaning Data** (July 2014, scored **100%**)
 4. **Exploratory Data Analysis** (August 2014, scored **100%**)
-5. **Reproducible Research** (September 2014)
-6. **Statistical Inference** (September 2014)
+5. **Reproducible Research** (September 2014, scored **100%**)
+6. **Statistical Inference** (December 2014)
 7. Regression Models
 8. Practical Machine Learning
 9. Developing Data Products
