@@ -17,9 +17,9 @@ library(dplyr)
 ## 
 ## Attaching package: 'dplyr'
 ## 
-## The following objects are masked from 'package:stats':
+## The following object is masked from 'package:stats':
 ## 
-##     filter, lag
+##     filter
 ## 
 ## The following objects are masked from 'package:base':
 ## 
@@ -36,6 +36,7 @@ library(grid)
 First, we read the raw CSV file as a data frame. The `read.csv()` function can accept .bz2 files without having to explicitly decompress it. This step is very time-consuming so we will **cache** this code chunk.
 
 ```r
+# Make sure you have set the working directory by setwd()
 raw_data <- read.csv(bzfile("repdata-data-StormData.csv.bz2"), stringsAsFactors = F)
 ```
 As the initial investigation, we look at the dimension and column names.
@@ -112,8 +113,11 @@ sub_data <- mutate(sub_data,
 ```
 
 ```
-## Warning: NAs introduced by coercion
-## Warning: NAs introduced by coercion
+## Warning in mutate_impl(.data, dots): NAs introduced by coercion
+```
+
+```
+## Warning in mutate_impl(.data, dots): NAs introduced by coercion
 ```
 
 ```r
@@ -177,7 +181,9 @@ length(unique(final_data$EVTYPE))
 ```
 ## [1] 488
 ```
-As a *simple* cleaning, we will lowercase the letters and replace all the blank and punctuation characters with a space.
+As a *simple* cleaning on, we will lowercase the letters and replace all the blank and punctuation characters with a space.
+
+* Remark: I know many students on the forum manually categorize the numerous EVTYPEs into much fewer ones, but this will involve too much tedious labeling effort and expertise in weather event definitions, which I think are far *beyond the purpose of this course*.
 
 ```r
 final_data$EVTYPE <- tolower(final_data$EVTYPE)
@@ -227,15 +233,16 @@ print(as.data.frame(result_health))
 ```
 
 ```r
-ggplot(result_health_melt, aes(x = reorder(EVTYPE, count), y = count, fill = DamageType)) + geom_bar(stat = "identity") + 
-    coord_flip() + labs(title = "Impact of Weather Events on Population Health",
-                        x = "Weather Event", y = "Number of Fatalities and Injuries", fill = "Damage Type") +
-    theme(text = element_text(size = 14), plot.title = element_text(face = "bold"), 
-          axis.title.x = element_text(vjust = -0.5), axis.title.y = element_text(vjust = +0.5), 
-          title = element_text(vjust = +1.5))
+ggplot(result_health_melt, aes(x = reorder(EVTYPE, count), y = count, fill = DamageType)) + 
+    geom_bar(stat = "identity") + coord_flip() +
+    labs(title = "Impact of Weather Events on Population Health",
+        x = "Weather Event", y = "Number of Fatalities and Injuries", fill = "Damage Type") +
+    theme(text = element_text(size = 14), plot.title = element_text(face = "bold"),
+        axis.title.x = element_text(vjust = -0.5), axis.title.y = element_text(vjust = +0.5), 
+        title = element_text(vjust = +1.5))
 ```
 
-![plot of chunk unnamed-chunk-14](./PA2_files/figure-html/unnamed-chunk-14.png) 
+![](PA2_files/figure-html/unnamed-chunk-14-1.png) 
 
 **Answer 1: Significantly, tornadoes are the most harmful event to population health. Other harmful events include excessive heat, tstm wind, floods, and lightning.**
 
@@ -272,15 +279,16 @@ print(format(as.data.frame(result_econ), digits = 3))
 ```
 
 ```r
-ggplot(result_econ_melt, aes(x = reorder(EVTYPE, count), y = count, fill = DamageType)) + geom_bar(stat = "identity") + 
-    coord_flip() + labs(title = "Impact of Weather Events on Economy",
-                        x = "Weather Event", y = "Damage on Property and Crop (US Dollars)", fill = "Damage Type") +
+ggplot(result_econ_melt, aes(x = reorder(EVTYPE, count), y = count, fill = DamageType)) +
+    geom_bar(stat = "identity") + coord_flip() + 
+    labs(title = "Impact of Weather Events on Economy",
+        x = "Weather Event", y = "Damage on Property and Crop (US Dollars)", fill = "Damage Type") +
     theme(text = element_text(size = 14), plot.title = element_text(face = "bold"),
           axis.title.x = element_text(vjust = -0.5), axis.title.y = element_text(vjust = +0.5),
           title = element_text(vjust = +1.5))
 ```
 
-![plot of chunk unnamed-chunk-16](./PA2_files/figure-html/unnamed-chunk-16.png) 
+![](PA2_files/figure-html/unnamed-chunk-16-1.png) 
 
 **Answer 2: Significantly, floods cause the greatest economic damage. Other economically damaging events include hurricane typhoons, tornadoes, and storm surge.**
 
