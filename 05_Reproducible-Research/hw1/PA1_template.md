@@ -1,12 +1,6 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
 # Reproducible Research: Peer Assessment 1
-Author: Coursera student [RyanLeiTaiwan](https://www.coursera.org/user/i/adc3888c696d25d769137c26e7006fd8)
-
+[Ryan Lei](https://www.coursera.org/user/i/adc3888c696d25d769137c26e7006fd8)  
+January 3, 2015  
 ## Loading and preprocessing the data
 * Load the data (i.e. `read.csv()`). Make sure you have set the working directory correctly by `setwd()`:
 
@@ -43,7 +37,7 @@ hist(sumEachDay$steps, col = "grey", breaks = 20,
     main = "[Before] Histogram of Total Number of Steps for One Day")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
+<img src="PA1_template_files/figure-html/unnamed-chunk-3-1.png" title="" alt="" style="display: block; margin: auto;" />
 
 * Calculate and report the mean and median total number of steps taken per day.
 
@@ -74,7 +68,7 @@ plot(meanEachInterval$interval, meanEachInterval$steps, type = "l", xaxt = "n",
 axis(1, c(seq(0, 2400, 200)))
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
+<img src="PA1_template_files/figure-html/unnamed-chunk-5-1.png" title="" alt="" style="display: block; margin: auto;" />
 
 * Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
   * Use `which.max()` to find the row containing the maximum. Then subset that row.
@@ -124,7 +118,7 @@ hist(newSumEachDay$steps, col = "grey", breaks = 20,
     main = "[After] Histogram of Total Number of Steps for One Day")
 ```
 
-![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
+<img src="PA1_template_files/figure-html/unnamed-chunk-9-1.png" title="" alt="" style="display: block; margin: auto;" />
 
 ```r
 mean(newSumEachDay$steps, na.rm = TRUE)
@@ -195,7 +189,7 @@ ggplot(newMeanEachInterval, aes(interval, steps)) + geom_line() + facet_grid(wee
     title = element_text(vjust = +1.0), plot.title = element_text(face = "bold"))
 ```
 
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
+<img src="PA1_template_files/figure-html/unnamed-chunk-11-1.png" title="" alt="" style="display: block; margin: auto;" />
 
 ```r
 c(meanWeekday, meanWeekend)
