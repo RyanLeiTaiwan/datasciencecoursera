@@ -1,5 +1,5 @@
 ---
-title: "Statistical Inference -- Simulation"
+title: "Statistical Inference -- Part 1"
 author: "[Ryan Lei](https://www.coursera.org/user/i/adc3888c696d25d769137c26e7006fd8)"
 date: "January 3, 2015"
 output: html_document
