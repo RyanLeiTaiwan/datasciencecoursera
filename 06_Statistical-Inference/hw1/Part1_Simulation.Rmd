@@ -1,0 +1,79 @@
+---
+title: "Statistical Inference -- Simulation"
+author: "[Ryan Lei](https://www.coursera.org/user/i/adc3888c696d25d769137c26e7006fd8)"
+date: "January 3, 2015"
+output: html_document
+---
+### Introduction
+In this exercise, we will explore the distribution of the **averages** of 40 exponential random variables and compare it with the distribution of only 1 exponential random variable.
+
+### Properties of A Single Exponential Random Variable
+* parameter: $\lambda$ (set to **0.2** for the whole exercise)
+* probability density function: $f(x;\lambda) = \lambda \exp^{-\lambda x}$ for $x >= 0$
+* mean: 1 / $\lambda$
+* standard deviation: 1 / $\lambda$
+* variance: 1 / $\lambda^2$
+
+### Result of 1,000 Simulations
+```{r, fig.align='center'}
+# Code modified from the instructor's Rmd lecture file on topic 07: Asymptopia
+library(ggplot2)
+lambda <- 0.2  # pamaeter in exponential random variables
+nosim <- 1000  # number of simulations
+size <- 40    # sample size
+
+# Put the rexp values in a matrix of nosim (1000) rows and size (40 or 1) columns.
+# Then, take the mean over each row.
+dat_avg <- data.frame(x = apply(matrix(rexp(size * nosim, lambda), nosim), 1, mean))
+dat_one <- data.frame(x = apply(matrix(rexp( 1 * nosim, lambda), nosim), 1, mean))
+
+# Plot for size = 40 and its approximated normal distribution
+ggplot(dat_avg, aes(x)) + geom_histogram(binwidth = 0.2, color = "black",
+    fill = "springgreen", aes(y = ..density..)) +
+    geom_vline(xintercept = mean(dat_avg$x), color = "red", linetype = "dashed") +
+    stat_function(fun = dnorm, size = 1, color = "black",
+        args = list(mean = 1 / lambda, sd = 1 / (lambda * sqrt(size)))) +
+    xlim(0, 10) + ylim(0, 1) +
+    labs(title = paste("Distribution of ", nosim, " Averages of ", size,
+        " Exponential(", lambda, ")'s", sep = ""))
+```
+
+The *simulated* mean (shown in **red** dashed lines) and variance are:
+```{r}
+c(mean(dat_avg$x), var(dat_avg$x))
+```
+The *theoretical* mean $1 / \lambda$ and variance $\sigma^2 / n = 1 / (\lambda^2 \cdot n)$ are:
+```{r}
+c(1 / lambda, 1 / (lambda ^ 2 * size))
+```
+
+### Explanation
+The simulated distribution is shown in **green**. From the numbers, we can see both the mean and variance of the simulated data are quite close to the theoretical mean and variance.
+
+If we overlap another normal distribution (shown in **black**) of mean = $1 / \lambda$ and variance = $1 / (\lambda^2 \cdot n)$, the distribution of averages of 40 exponentials can sufficiently approximate normal for sample size n = 40.
+
+### Comparison with The Distribution of Only 1 Exponential
+```{r, fig.align='center'}
+# Plot for size = 1 and its approximated normal distribution
+ggplot(dat_one, aes(x)) + geom_histogram(binwidth = 0.5, color = "black",
+    fill = "cyan", aes(y = ..density..)) +
+    geom_vline(xintercept = mean(dat_one$x), color = "red", linetype = "dashed") +
+    stat_function(fun = dnorm, size = 1, color = "black",
+        args = list(mean = 1 / lambda, sd = 1 / (lambda * sqrt(1)))) + 
+    xlim(-10, 20) + ylim(0, 1) +
+    labs(title = paste("Distribution of ", nosim,
+        " Exponential(", lambda, ")'s", sep = ""))
+```
+The *simulated* mean (shown in **red** dashed lines) and variance are:
+```{r}
+c(mean(dat_one$x), var(dat_one$x))
+```
+The *theoretical* mean $1 / \lambda$ and variance $\sigma^2 / n = 1 / (\lambda^2 \cdot n)$ are:
+```{r}
+c(1 / lambda, 1 / (lambda ^ 2 * 1))
+```
+When the sample size n = 1, although the simulated mean and variance are still close to the theoretical values, the shape of the distribution (shown in **cyan**) is far from normal. The density decays over x.
+
+### Conclusion
+The Central Limit Theorem gives **no garentee** about the performance in *finite* sample sizes. Therefore, in this exercise, it is enough for the distribution of averages of exponential(0.2)'s to approximate *normal* for a sample size n = 40, but NOT enough for n = 1.
+
