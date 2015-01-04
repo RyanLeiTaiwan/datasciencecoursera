@@ -8,7 +8,7 @@ output: html_document
 In this exercise, we will perform a basic inferential data analysis on the **ToothGrowth** dataset built in R.
 
 ### Exploratory Data Analysis
-From the help page of command `?ToothGrowth`, we know that this dataset measures the tooth lengths of 10 Guinea pigs grouped by **2 supplement types**: orange juice (OJ) and ascorbic acid (VC), and **3 dose levels**: 0.5, 1, 2 mg.
+From the help page of command `?ToothGrowth`, we know that this dataset measures the tooth lengths of 10 Guinea pigs grouped by **2 supplement types** of vitamim C: orange juice (OJ) and ascorbic acid (VC), and **3 dose levels**: 0.5, 1.0, and 2.0 mg.
 
 Let's see what the dataset looks like:
 ```{r}
@@ -31,13 +31,13 @@ coplot(len ~ dose | supp, data = ToothGrowth, panel = panel.smooth,
        xlab = "ToothGrowth data: length vs dose, given type of supplement")
 ```
 
-### Intuition
-At first glance, it seems OJ supplement is more effective than VC. In addition, dose level has a positive effect on tooth lengths. However, at a high dose level (from 1.0 to 2.0), this effect is not as strong. Even the situation of OJ outperforming VC disappears at dose = 2.0.
+### Intuitions
+At first glance, it seems **OJ supplement is more effective than VC**. In addition, **dose level has a positive effect on tooth lengths**. However, at a high dose level (from 1.0 to 2.0), this effect is not as strong. Even the situation of OJ outperforming VC disappears at dose = 2.0.
 
-Next, we will conduct confidence intervals and hypothesis testing to verify this intuition.
+Next, we will conduct confidence intervals and hypothesis tests to verify these intuitions.
 
-### Confidence Interval and Hypothesis Testing
-In this exercise, we will assume the 10 pigs are *NOT paired*, i.e., the pig #1 in one group is different from the pig #1 in another group. Therefore, they are treated as **independent groups**. Also, we will assume **unequal variances** across groups because we are not given such information.
+### Confidence Intervals and Hypothesis Tests
+In this exercise, we will assume the 10 pigs are *NOT paired*, i.e., the pig #1 in one group is different from the pig #1 in another group. Therefore, they are treated as **independent groups**. Also, we will assume **unequal population variances** across groups because we are not given such information.
 
 First, we subset the dataset into different variables for easier references.
 ```{r}
@@ -49,11 +49,11 @@ VC_10 <- subset(ToothGrowth, supp == "VC" & dose == 1.0)$len
 VC_20 <- subset(ToothGrowth, supp == "VC" & dose == 2.0)$len
 ```
 
-In this exercise, we set all significance levels $\alpha$ to 5% to derive 95% confidence intervals. Because the exploratory data analysis showed a nice intuition that generally OJ > VC and higher dose > lower dose, all the comparisons will be done in **one-sided T tests** on differences in group means.
+In this exercise, we set all significance levels $\alpha$ to 5% to derive 95% confidence intervals. Because the exploratory data analysis showed a nice intuition that generally $\mu_{OJ}$ > $\mu_{VC}$ and $\mu_{higher.dose}$ > $\mu_{lower.dose}$, all the comparisons will be done in **one-sided T tests** on differences in group means.
 
 **We will reject the null hypothesis if *zero* is outside the 95% confidence interval, or equivalently, p-value < 0.05.**
 
-**(1-1) At dose = 0.5 --------- $H_0$: $\mu_{OJ}$ = $\mu_{VC}$, $H_a$: $\mu_{OJ}$ > $\mu_{VC}$ **
+**(1.1) At dose = 0.5 --------- $H_0$: $\mu_{OJ}$ = $\mu_{VC}$, $H_a$: $\mu_{OJ}$ > $\mu_{VC}$ **
 
 ```{r}
 test11 <- t.test(OJ_05, VC_05, alternative = "greater", paired = F, var.equal = F)
@@ -61,7 +61,7 @@ list(confidence.interval = test11$conf.int, p.value = test11$p.value)
 ```
 * Result: Reject $H_0$ in favor of $H_a$.
 
-**(1-2) At dose = 1.0 --------- $H_0$: $\mu_{OJ}$ = $\mu_{VC}$, $H_a$: $\mu_{OJ}$ > $\mu_{VC}$ **
+**(1.2) At dose = 1.0 --------- $H_0$: $\mu_{OJ}$ = $\mu_{VC}$, $H_a$: $\mu_{OJ}$ > $\mu_{VC}$ **
 
 ```{r}
 test12 <- t.test(OJ_10, VC_10, alternative = "greater", paired = F, var.equal = F)
@@ -69,7 +69,7 @@ list(confidence.interval = test12$conf.int, p.value = test12$p.value)
 ```
 * Result: Reject $H_0$ in favor of $H_a$.
 
-**(1-3) At dose = 2.0 --------- $H_0$: $\mu_{OJ}$ = $\mu_{VC}$, $H_a$: $\mu_{OJ}$ > $\mu_{VC}$ **
+**(1.3) At dose = 2.0 --------- $H_0$: $\mu_{OJ}$ = $\mu_{VC}$, $H_a$: $\mu_{OJ}$ > $\mu_{VC}$ **
 
 ```{r}
 test13 <- t.test(OJ_20, VC_20, alternative = "greater", paired = F, var.equal = F)
@@ -79,28 +79,28 @@ list(confidence.interval = test13$conf.int, p.value = test13$p.value)
 
 --------
 
-**(2-1) At supp = OJ --------- $H_0$: $\mu_{0.5}$ = $\mu_{1.0}$, $H_a$: $\mu_{0.5}$ < $\mu_{1.0}$ **
+**(2.1) At supp = OJ --------- $H_0$: $\mu_{0.5}$ = $\mu_{1.0}$, $H_a$: $\mu_{0.5}$ < $\mu_{1.0}$ **
 ```{r}
 test21 <- t.test(OJ_05, OJ_10, alternative = "less", paired = F, var.equal = F)
 list(confidence.interval = test21$conf.int, p.value = test21$p.value)
 ```
 * Result: Reject $H_0$ in favor of $H_a$.
 
-**(2-2) At supp = VC --------- $H_0$: $\mu_{0.5}$ = $\mu_{1.0}$, $H_a$: $\mu_{0.5}$ < $\mu_{1.0}$ **
+**(2.2) At supp = VC --------- $H_0$: $\mu_{0.5}$ = $\mu_{1.0}$, $H_a$: $\mu_{0.5}$ < $\mu_{1.0}$ **
 ```{r}
 test22 <- t.test(VC_05, VC_10, alternative = "less", paired = F, var.equal = F)
 list(confidence.interval = test22$conf.int, p.value = test22$p.value)
 ```
 * Result: Reject $H_0$ in favor of $H_a$.
 
-**(2-3) At supp = OJ --------- $H_0$: $\mu_{1.0}$ = $\mu_{2.0}$, $H_a$: $\mu_{1.0}$ < $\mu_{2.0}$ **
+**(2.3) At supp = OJ --------- $H_0$: $\mu_{1.0}$ = $\mu_{2.0}$, $H_a$: $\mu_{1.0}$ < $\mu_{2.0}$ **
 ```{r}
 test23 <- t.test(OJ_10, OJ_20, alternative = "less", paired = F, var.equal = F)
 list(confidence.interval = test23$conf.int, p.value = test23$p.value)
 ```
-* Result: **Do not** reject $H_0$.
+* Result: Reject $H_0$ in favor of $H_a$. (not as significant as other tests, though)
 
-**(2-4) At supp = VC --------- $H_0$: $\mu_{1.0}$ = $\mu_{2.0}$, $H_a$: $\mu_{1.0}$ < $\mu_{2.0}$ **
+**(2.4) At supp = VC --------- $H_0$: $\mu_{1.0}$ = $\mu_{2.0}$, $H_a$: $\mu_{1.0}$ < $\mu_{2.0}$ **
 ```{r}
 test24 <- t.test(VC_10, VC_20, alternative = "less", paired = F, var.equal = F)
 list(confidence.interval = test24$conf.int, p.value = test24$p.value)
@@ -108,6 +108,14 @@ list(confidence.interval = test24$conf.int, p.value = test24$p.value)
 * Result: Reject $H_0$ in favor of $H_a$.
 
 ### Conclusions
-At first glance, it seems OJ supplement is more effective than VC. In addition, dose level has a positive effect with the tooth length. However, at high dose level of 2.0, the effect is not as strong. Even the situation of OJ outperforming VC disappear at dose = 2.0.
+In this experiment, we are trying to test the effect of supplementing **different types** and **different dose levels** of vitamin C on the tooth lengths of 10 Guinea pigs. We assume the hypothesis tests are done with independent groups, i.e., the pigs are not paired. We also assume unequal population variances across groups. At a 95% significance level ($\alpha$ = 0.05), we perform one-sided T tests to see if:
 
-Assumptions: independent groups
+* The effect of supplementing orange juice (OJ) is greater than that of supplementing ascorbic acid (VC).
+* The effect of a higher dose level is greater than that of a lower dose level.
+
+According to the above 7 hypothesis tests, **our intuitions are quite correct.**
+
+In comparing the two supplement types (Test 1.1 to 1.3), the means of OJ are statistically greater than the means of VC at dose = 0.5 and 1.0, with p-values of $3 \times 10^{-3}$ and $5 \times 10^{-4}$. But at dose = 2.0, OJ no longer outperforms VC, with p-value = 0.5181.
+
+In comparing the three dose levels (Test 2.1 to 2.4), ALL the means of higher dose levels are statistically greater than the means of lower dose levels, with generally *even lower* p-values from $3 \times 10^{-7}$ to $4 \times 10^{-5}$. However, in comparing $\mu_{1.0}$ and $\mu_{2.0}$ when supp = OJ (Test 2.3), although we still reject $H_0$, the p-value jumps up to 0.0196, the highest of the 6 tests where we reject $H_0$.
+
