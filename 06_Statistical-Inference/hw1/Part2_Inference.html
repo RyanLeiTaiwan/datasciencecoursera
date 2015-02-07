@@ -98,7 +98,7 @@ coplot(len ~ dose | supp, data = ToothGrowth, panel = panel.smooth,
 </div>
 <div id="confidence-intervals-and-hypothesis-tests" class="section level3">
 <h3>Confidence Intervals and Hypothesis Tests</h3>
-<p>In this exercise, we will assume the 10 pigs are <em>NOT paired</em>, i.e., the pig #1 in one group is different from the pig #1 in another group. Therefore, they are treated as <strong>independent groups</strong>. Also, we will assume <strong>unequal population variances</strong> across groups because we are not given such information.</p>
+<p>In this exercise, we will assume the 10 Guinea pigs are <em>NOT paired</em>, i.e., the Guinea pig #1 in one group is different from the Guinea pig #1 in another group. Therefore, they are treated as <strong>independent groups</strong>. Also, we will assume <strong>unequal population variances</strong> across groups because we are not given such information.</p>
 <p>First, we subset the dataset into different variables for easier references.</p>
 <pre class="r"><code>OJ_05 &lt;- subset(ToothGrowth, supp == &quot;OJ&quot; &amp; dose == 0.5)$len
 OJ_10 &lt;- subset(ToothGrowth, supp == &quot;OJ&quot; &amp; dose == 1.0)$len
@@ -203,7 +203,7 @@ list(confidence.interval = test24$conf.int, p.value = test24$p.value)</code></pr
 </div>
 <div id="conclusions" class="section level3">
 <h3>Conclusions</h3>
-<p>In this experiment, we are trying to test the effect of supplementing <strong>different types</strong> and <strong>different dose levels</strong> of vitamin C on the tooth lengths of 10 Guinea pigs. We assume the hypothesis tests are done with independent groups, i.e., the pigs are not paired. We also assume unequal population variances across groups. At a 95% significance level (<span class="math">\(\alpha\)</span> = 0.05), we perform one-sided T tests to see if:</p>
+<p>In this experiment, we are trying to test the effect of supplementing <strong>different types</strong> and <strong>different dose levels</strong> of vitamin C on the tooth lengths of 10 Guinea pigs. We assume the hypothesis tests are done with independent groups, i.e., the Guinea pigs are not paired. We also assume unequal population variances across groups. At a 95% significance level (<span class="math">\(\alpha\)</span> = 0.05), we perform one-sided T tests to see if:</p>
 <ul>
 <li>The effect of supplementing orange juice (OJ) is greater than that of supplementing ascorbic acid (VC).</li>
 <li>The effect of a higher dose level is greater than that of a lower dose level.</li>

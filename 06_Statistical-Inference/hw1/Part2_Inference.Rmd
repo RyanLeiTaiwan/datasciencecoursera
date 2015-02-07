@@ -37,7 +37,7 @@ At first glance, it seems **OJ supplement is more effective than VC**. In additi
 Next, we will conduct confidence intervals and hypothesis tests to verify these intuitions.
 
 ### Confidence Intervals and Hypothesis Tests
-In this exercise, we will assume the 10 pigs are *NOT paired*, i.e., the pig #1 in one group is different from the pig #1 in another group. Therefore, they are treated as **independent groups**. Also, we will assume **unequal population variances** across groups because we are not given such information.
+In this exercise, we will assume the 10 Guinea pigs are *NOT paired*, i.e., the Guinea pig #1 in one group is different from the Guinea pig #1 in another group. Therefore, they are treated as **independent groups**. Also, we will assume **unequal population variances** across groups because we are not given such information.
 
 First, we subset the dataset into different variables for easier references.
 ```{r}
@@ -108,7 +108,7 @@ list(confidence.interval = test24$conf.int, p.value = test24$p.value)
 * Result: Reject $H_0$ in favor of $H_a$.
 
 ### Conclusions
-In this experiment, we are trying to test the effect of supplementing **different types** and **different dose levels** of vitamin C on the tooth lengths of 10 Guinea pigs. We assume the hypothesis tests are done with independent groups, i.e., the pigs are not paired. We also assume unequal population variances across groups. At a 95% significance level ($\alpha$ = 0.05), we perform one-sided T tests to see if:
+In this experiment, we are trying to test the effect of supplementing **different types** and **different dose levels** of vitamin C on the tooth lengths of 10 Guinea pigs. We assume the hypothesis tests are done with independent groups, i.e., the Guinea pigs are not paired. We also assume unequal population variances across groups. At a 95% significance level ($\alpha$ = 0.05), we perform one-sided T tests to see if:
 
 * The effect of supplementing orange juice (OJ) is greater than that of supplementing ascorbic acid (VC).
 * The effect of a higher dose level is greater than that of a lower dose level.
